@@ -1,0 +1,6 @@
+{
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "html.format.wrapAttributes": "force",
+  "html.format.wrapLineLength": 1000
+}

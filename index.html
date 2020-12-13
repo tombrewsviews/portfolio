@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hi, I'm Tom</title>
+
+    <script defer src="script.js"></script>
+    <script>
+      // Global namespace (backwards-compatibility)
+      var SPE = {};
+    </script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.spline.design/lib/spline.runtime.min.js"
+    ></script>
+    <script defer src="js/assets.js"></script>
+    <script defer src="js/scene.js"></script>
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <img src="img/avtar.jpg" alt="Avtar :)" class="nav__avatar" />
+      <ul class="nav__links">
+        <li class="nav__item">
+          <a class="nav__link menu__item" href="#section--1">Skills</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link menu__item" href="#section--2">Collab</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link menu__item" href="#section--3">Tech</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link menu__item" href="#section--4">Products</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link menu__item" href="#section--5">Tools</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link menu__item" href="#section--6">Writing</a>
+        </li>
+
+        <li class="nav__item">
+          <a class="nav__link menu__item" href="#section--7">The Path</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link menu__item" href="#section--8">Remote</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link nav__link--btn btn--show-modal" href="##">Goodies!</a>
+        </li>
+      </ul>
+    </nav>
+
+    <header class="header">
+      <div class="header__title">
+        <h1>Hi, I'm Tom 👋</h1>
+        <h4 class="header__subtitle">
+          Product designer
+          <span class="highlight">eager engineer</span>strategist
+          <span class="highlight">wild innovator</span> proud dad
+          <span class="highlight">creative doer</span> aspiring musician.
+        </h4>
+        <button class="btn--text btn--scroll-to">Tell me more</button>
+      </div>
+      <div class="canvas__wrapper">
+        <div id="loader">
+          <div class="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <!-- <canvas id="canvas3d"></canvas> -->
+      </div>
+    </header>
+
+    <section class="section" id="section--1">
+      <div class="section__title">
+        <h2 class="section__description">Skills</h2>
+        <h3 class="section__header">
+          I'm a full-stack product designer with an obsessive engineering
+          disorder.
+        </h3>
+      </div>
+      <div class="skills">
+        <div class="skills__tab-container">
+          <button class="btn skills__tab skills__tab--active" data-tab="1">
+            Product Strategy
+          </button>
+          <button class="btn skills__tab" data-tab="2">Prototyping</button>
+          <button class="btn skills__tab" data-tab="3">High Fidelity</button>
+          <button class="btn skills__tab" data-tab="4">Implementation</button>
+          <button class="btn skills__tab" data-tab="5">
+            Interaction Design
+          </button>
+          <button class="btn skills__tab" data-tab="6">Data Analysis</button>
+          <button class="btn skills__tab" data-tab="7">Deep Learing</button>
+        </div>
+        <div class="skills__content skills__content--1 skills__content--active">
+          <h4 class="skills__header">Product Strategy</h4>
+          <p>
+            I lead Design Thinking sessions, stakeholder brainstorming meetings,
+            customer interviews, create competitive analysis, customer journey,
+            and help with business model ideation. I focus on mapping research
+            outcomes to business expectations.
+          </p>
+        </div>
+
+        <div class="skills__content skills__content--2">
+          <h4 class="skills__header">Prototyping</h4>
+          <p>
+            I create wireframes and flows, taking into account essential edge
+            cases. My first recommendation is to bring the product to the market
+            as soon as possible. I will often make fully functional prototypes
+            to start gathering real-time user feedback.
+          </p>
+        </div>
+        <div class="skills__content skills__content--3">
+          <h4 class="skills__header">High Fidelity</h4>
+          <p>
+            My favourite style is heavily inspired by the scandinavian school of
+            clean, functional, and playful design. I'm proficient in Sketch,
+            Illustrator, Figma, but I like experiment with unconventional tools
+            like Spline, Unity, and Blender.
+          </p>
+        </div>
+        <div class="skills__content skills__content--4">
+          <h4 class="skills__header">Implementation</h4>
+          <p>
+            I've been transitioning to engineering for the last couple of years
+            by making active contributions to the code base. I'm experienced in
+            production quality HTML and CSS. I continuously upskill in practical
+            knowledge of Javascript and React.
+          </p>
+        </div>
+        <div class="skills__content skills__content--5">
+          <h4 class="skills__header">Interaction Design</h4>
+          <p>
+            Animations, transitions, transforms, SVG effects, HMTL canvas
+            illustrations, 3D games... I've done it all, and I remain fascinated
+            by the world of interaction design. My main focus is on a smooth
+            user experience and engagement.
+          </p>
+        </div>
+        <div class="skills__content skills__content--6">
+          <h4 class="skills__header">Data Analysis</h4>
+          <p>
+            I use data analytics to inform my product design decisions. I have
+            the most success with Amplitude and Mix Panel for applications. I
+            would always recommend Hotjar for the website analytics software. My
+            goal is to iterate and improve user experience continuously.
+          </p>
+        </div>
+        <div class="skills__content skills__content--7">
+          <h4 class="skills__header">Deep Learning</h4>
+          <p>
+            I've started my adventure with Machine Learning not long ago, but I
+            can already see how important it will be in the future of product
+            design. I'm exploring converstational interfaces, dynamic layouts,
+            and face recognition features.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="section--2">
+      <div class="section__title title__reset">
+        <div
+          id="top--track"
+          style="
+            width: 10px;
+            height: 10px;
+            position: relative;
+            top: -280px;
+            /* background-color: red; */
+          "
+        ></div>
+        <h2 class="section__description">Collaboration</h2>
+        <h3 class="section__header collab__text">
+          I've co-created a designer-friendly abstraction on top of React to
+          enable full collaboration between designers, engineers, and product owners.
+        </h3>
+        <div>
+          <img
+            src="img/collab-lazy.png"
+            data-src="img/collab.png"
+            alt="Views Tools"
+            class="collab__img lazy-img"
+          />
+          <div
+            class="tooltip"
+            style="
+              width: 24px;
+              height: 24px;
+              border-radius: 100%;
+              position: relative;
+              top: -360px;
+              left: 30px;
+              background-color: rgba(255, 141, 0, 0.5);">
+            <span class="tooltip--text--ds" style="width: 220px">Accessible design system</span>
+            <div class="pulse"></div>
+          </div>
+          <div
+            class="tooltip"
+            style="
+              width: 24px;
+              height: 24px;
+              border-radius: 100%;
+              position: relative;
+              top: -330px;
+              left: -40px;
+              background-color: rgba(255, 141, 0, 0.5);">
+            <span class="tooltip--text--env" style="width: 285px">Flexible environment configuration</span>
+            <div class="pulse"></div>
+          </div>
+          <div
+            class="tooltip"
+            style="
+              width: 24px;
+              height: 24px;
+              border-radius: 100%;
+              position: relative;
+              top: -350px;
+              left: 150px;
+              background-color: rgba(255, 141, 0, 0.5);">
+            <span class="tooltip--text--state" style="width: 300px">State modeled in folder-like structure</span>
+            <div class="pulse"></div>
+          </div>
+          <div
+            class="tooltip"
+            style="
+              width: 24px;
+              height: 24px;
+              border-radius: 100%;
+              position: relative;
+              top: -450px;
+              left: 140px;
+              background-color: rgba(255, 141, 0, 0.5);">
+            <span class="tooltip--text--play" style="width: 210px">Start apps with one click</span>
+            <div class="pulse"></div>
+          </div>
+          <div
+            class="tooltip"
+            style="
+              width: 24px;
+              height: 24px;
+              border-radius: 100%;
+              position: relative;
+              top: -320px;
+              left: -210px;
+              background-color: rgba(255, 141, 0, 0.5);">
+            <span class="tooltip--text--new" style="width: 225px">Create new React projects</span>
+            <div class="pulse"></div>
+          </div>
+          <div
+            class="tooltip"
+            style="
+              width: 24px;
+              height: 24px;
+              border-radius: 100%;
+              position: relative;
+              top: -320px;
+              left: 560px;
+              background-color: rgba(255, 141, 0, 0.5);">
+            <span class="tooltip--text--blocks" style="width: 280px">Clean key-value interface settings</span>
+            <div class="pulse"></div>
+          </div>
+          <div
+            class="tooltip"
+            style="
+              width: 24px;
+              height: 24px;
+              border-radius: 100%;
+              position: relative;
+              top: -270px;
+              left: 510px;
+              background-color: rgba(255, 141, 0, 0.5);">
+            <span class="tooltip--text--react" style="width: 200px">Use React components</span>
+            <div class="pulse"></div>
+          </div>
+          <div
+            class="tooltip"
+            style="
+              width: 24px;
+              height: 24px;
+              border-radius: 100%;
+              position: relative;
+              top: -90px;
+              left: 240px;
+              background-color: rgba(255, 141, 0, 0.5);">
+            <span class="tooltip--text--add" style="width: 290px">Add new Views to control the state</span>
+            <div class="pulse"></div>
+          </div>
+          <div
+            class="tooltip"
+            style="
+              width: 24px;
+              height: 24px;
+              border-radius: 100%;
+              position: relative;
+              top: -230px;
+              left: 20px;
+              background-color: rgba(255, 141, 0, 0.5);">
+            <span class="tooltip--text--data" style="width: 360px">Fully extandable React logic and data queries</span>
+            <div class="pulse"></div>
+          </div>
+        </div>
+
+        
+
+        <h5 class="collab__subtitle collab__text">
+          I believe design and engineering are the same. Unfortunately, software developement
+          is complex, and engineering tools are hard to use by less-technical
+          designers and product owners. I'm part of the movement with a goal to simplify software delivery process!
+          I'm notoriously involved in reinventing the design tooling to make the
+          designer-developer experience as integrated as possible. </br>We call it,
+          Views.
+        </h5>
+      </div>
+    </section>
+
+    <section class="section__static dark" id="section--3">
+      <div class="section__title">
+        <h2 class="section__description">Tech</h2>
+        <h3 class="section__header collab__text">I enjoy breaking things and putting them back together. 
+          I spend at least two hours a day learning.
+        </h3>
+        
+        <div class="collab__tech">
+            <img  class="tech__icon" src="img/react.svg" alt="react skills"/>
+            <img  class="tech__icon" src="img/graph.svg" alt="react skills"/>
+            <img  class="tech__icon" src="img/tensor.svg" alt="tensor skills"/>
+            <img  class="tech__icon" src="img/c.svg" alt="c skills"/>
+            <img  class="tech__icon" src="img/js.svg" alt="js skills"/>
+            <img  class="tech__icon" src="img/html.svg" alt="html skills"/>
+            <img  class="tech__icon" src="img/css.svg" alt="css skills"/>
+            <img  class="tech__icon" src="img/views.svg" alt="views skills"/>
+        </div>
+        <div style="display: flex; flex: 1; justify-content: flex-end;">
+          <img  class="legend" src="img/legend.svg" alt="legend"/>
+        </div>
+        <a href="https://github.com/tombrewsviews" target="_blank">
+        <img
+        src="img/github-contributions-lazy.jpg"
+        data-src="img/github-contributions.jpg"
+        alt="Tom Github contributions"
+        class="github__img lazy-img"
+      /></a>
+      </div>
+      <div
+        id="bottom--track"
+        style="
+          width: 10px;
+          height: 10px;
+          position: relative;
+          top: 120px;
+          /* background-color: red; */
+        "
+      ></div>
+    </section>
+
+    <section class="section" id="section--4">
+      <div class="section__title">
+        <h2 class="section__description">Products</h2>
+        <h3 class="section__header">The latest products I've help deliver are in the dental and orthodontic practice management space.</h3>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; margin: 0 auto;">
+        <img
+          src="img/mf-lazy.jpg"
+          data-src="img/mf.jpg"
+          alt="Medical form app"
+          class="products__img lazy-img"
+        />
+        <div class="products__text">
+          <h4 class="products__title">Digital Medical Forms</h4>
+            <h5 style="margin-top: 8px;">
+              Replaces paper forms with digital, Typeform-like experience (one question at the time). 
+              Patients can provide required information at their convenience.
+              Full compatibility with legacy software over a REST service.
+              Over 50 questions in the flow with 10 custom made React components.</br>
+              <strong>My responsibilities: </strong>Discovery, Design, Interface Implementation </br>
+              <strong>Status:</strong> In production, access for existing patients
+            </h5>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; margin: 100px auto 0 auto;">
+        <img
+          src="img/aw-lazy.jpg"
+          data-src="img/aw.jpg"
+          alt="Appointment Widget app"
+          class="products__img lazy-img"
+        />
+        <div class="products__text">
+          <h4 class="products__title">Appointment Widget</h4>
+          <h5 style="margin-top: 8px;">
+            Online appointment booking for new patients of dental and orthodontic clinics.
+            295% increase in new patients exams.
+            Seamless experience for the clinics since the data was integrated into their 
+            practice management software.</br>
+            <strong>My responsibilities: </strong>Discovery, Design, Interface Implementation </br>
+            <strong>Status:</strong> In production, embeded in <a href="https://westrockortho.com/" target="_blank">clinic's websites</a>. <a class="btn--show-modal-video" href="##">Watch showcase</a> 
+          </h5>
+        </div>
+      </div>
+      
+      <div style="display: flex; flex-direction: column; align-items: center; margin: 100px auto 0 auto;">
+        <img
+          src="img/ddc-lazy.jpg"
+          data-src="img/ddc.jpg"
+          alt="Direct Dental Care app"
+          class="products__img lazy-img"
+        />
+        <div class="products__text">
+          <h4 class="products__title">Direct Dental Care Portal</h4>
+          <h5 style="margin-top: 8px;">
+            Data management platform directly connects dental providers and patients saving out-of-pocket 
+            costs of preventive care for patients, and generating additional income for providers.
+            73 user-facing features in total, in 3 apps. 6 months of active development.</br>
+            <strong>My responsibilities: </strong>Delivery Strategy, Discovery, Design, Interface Implementation </br>
+            <strong>Status:</strong> In production, available at <a href="https://member.directdentalcare.com/signup" target="_blank">directdentalcare.com</a>
+          </h5>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; margin: 100px auto 0 auto;">
+        <img
+          src="img/comms-lazy.jpg"
+          data-src="img/comms.jpg"
+          alt="Patient communication app"
+          class="products__img lazy-img"
+        />
+        <div class="products__text">
+          <h4 class="products__title">2-ways Patient-Clinic SMS Communicator</h4>
+          <h5 style="margin-top: 8px;">
+            An integrated way for the clinical professionals to stay in close contact with patients.
+            Extreamly important in the pandemic times when patients have to wait outside to be called in. 
+            Gives full visibility and control of communication patients including Net Promoter Score functionality.</br>
+            <strong>My responsibilities: </strong>Discovery, Design, Interface Implementation </br>
+            <strong>Status:</strong> In production, internal product
+          </h5>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background-color: #fff; border: 0;" id="section--5">
+      <div class="section__title">
+        <h2 class="section__description">Tools</h2>
+        <h3 class="section__header">I've became proficient with many tools over the 16 years of my design career.</h3>
+      </div>
+      <div class="tools_grid"></div>
+    </section>
+
+    <section class="section" style="border: 0;" id="section--6">
+      <div class="section__title section__title--testimonials">
+        <h2 class="section__description">Writing</h2>
+        <h3 class="section__header">
+          I share what I've learned, and learn from what others share.
+        </h3>
+      </div>
+      <div id="medium-widget"></div>
+      <script src="https://medium-widget.pixelpoint.io/widget.js"></script>
+      <script>
+        MediumWidget.Init({
+          renderTo: '#medium-widget',
+          params: {
+            resource: 'https://medium.com/@tomparandyk',
+            postsPerLine: 2,
+            limit: 10,
+            picture: 'big',
+            fields: ['description', 'author', 'publishAt'],
+            ratio: 'landscape',
+          },
+        });
+      </script>
+    </section>
+
+    <section class="section" id="section--7">
+      <div class="section__title">
+        <h2 class="section__description">The Path</h2>
+        <h3 class="section__header">I've started in print, went to advertising, fell in love with UX, and I'm transitioning to engineering for the last couple of years.</h3>
+      </div>
+    </section>
+
+    <section class="section" style="background-color: #fff; border: 0;" id="section--8">
+      <div class="section__title">
+        <h2 class="section__description">Remote Culture</h2>
+        <h3 class="section__header">I communicate a lot with my team. I make myself available for calls and discussions. I like to listen to people's opinions and I'm not afraid to speak up.</h3>
+      </div>
+      <!-- <iframe
+          width="800"
+          height="400"
+          frameborder="0"
+          src="https://www.youtube.com/embed/sScv9xEBg2M?loop=1&autoplay=1&mute=1"
+        >
+        </iframe> -->
+    </section>
+
+    <section class="section" style="padding: 0rem; border-top: 0px solid #ddd;line-height: 0;">
+      
+      <div class="section__title" style="position: absolute; z-index: 10;left: 0; right: 0;margin-top: 8vw;">
+        <h2 class="section__description" style="color: white">After work</h2>
+        <h3 class="section__header" style="margin-top: 32px">
+          I'm a dad, musician, maker, photographer, explorer.
+        </h3>
+      </div>
+      <img
+        src="img/tomphoto-lazy.jpg"
+        data-src="img/tomphoto.jpg"
+        alt="Tom Photos"
+        class="section__img lazy-img"
+      />
+
+    </section>
+
+    <footer class="footer">
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" target="_blank" href="https://medium.com/@tomparandyk">Medium</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" target="_blank" href="https://dribbble.com/tmass">Dribbble</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" target="_blank" href="https://github.com/tombrewsviews">Github</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" target="_blank" href="https://soundcloud.com/user-994874332/fire">Soundcloud</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" target="_blank" href="https://unsplash.com/@tomtherapidcodeguy">Unsplash</a>
+        </li>
+      </ul>
+    </footer>
+
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Get stuff
+      </h2>
+      <button class="btn">Next step &rarr;</button>
+    </div>
+    <div class="overlay hidden"></div>
+    <div class="modal__video hidden">
+      <button class="btn--close-modal-video">&times;</button>
+      <div style=""></div>
+          <iframe
+            width="100%"
+            height="100%"
+            frameborder="0"
+            src="https://www.youtube.com/embed/sScv9xEBg2M?&autoplay=1&mute=1&loop=1&playlist=sScv9xEBg2M"
+          >
+          </iframe>
+        </div>
+    </div>
+    <div class="overlay__video hidden"></div>
+  </body>
+</html>
