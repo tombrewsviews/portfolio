@@ -114,6 +114,10 @@ a {
   margin-top: 32px;
 }
 
+.download--btn {
+  width: 185px;
+}
+
 p {
   color: #666;
 }
@@ -798,6 +802,15 @@ img {
 .tools__icon {
   width: 80px;
   height: 80px;
+}
+
+/* REMOTE */
+.remote__grid {
+  display: grid;
+  margin-top: 24px;
+  grid-template-columns: 80px 80px 80px 80px 80px 80px 80px;
+  grid-template-rows: 80px;
+  gap: 20px 20px;
 }
 
 /* FOOTER */
