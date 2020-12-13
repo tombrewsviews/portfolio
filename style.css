@@ -789,10 +789,10 @@ img {
 
 .tools__grid {
   display: grid;
-  margin-top: 48px;
-  grid-template-columns: 80px 80px 80px 80px;
-  grid-template-rows: 80px 80px;
-  gap: 10px 10px;
+  margin-top: 60px;
+  grid-template-columns: 80px 80px 80px 80px 80px 80px 80px;
+  grid-template-rows: 80px 80px 80px;
+  gap: 20px 20px;
 }
 
 .tools__icon {
@@ -802,25 +802,52 @@ img {
 
 /* FOOTER */
 .footer {
-  padding: 10rem 3rem;
+  padding: 10rem 3rem 16px 3rem;
   background-color: #161616;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer__nav {
-  list-style: none;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
   margin-bottom: 5rem;
 }
 
 .footer__item {
   margin-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+  fill: var(--color-tertiary-darker);
+  transform: translateY(0px);
+  transition: all 0.25s;
+}
+
+.footer__icon:hover {
+  transform: translateY(-8px);
+  transition: all 0.25s;
 }
 
 .footer__link {
   font-size: 1.6rem;
   color: var(--color-tertiary-darker);
   text-decoration: none;
+  transform: scale(1);
+  transition: all 0.25s;
+}
+
+.footer__link:hover {
+  transform: scale(1.1);
+  transition: all 0.25s;
 }
 
 .footer__avatar {
