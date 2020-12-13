@@ -229,7 +229,7 @@ canvas {
 .header__title {
   width: 430px;
   line-height: 44px;
-  margin-left: 150px;
+  margin-left: 100px;
 }
 
 h1 {
@@ -783,6 +783,21 @@ img {
   font-weight: 700;
   margin-top: 32px;
   align-self: flex-start;
+}
+
+/* TOOLS */
+
+.tools__grid {
+  display: grid;
+  margin-top: 48px;
+  grid-template-columns: 80px 80px 80px 80px;
+  grid-template-rows: 80px 80px;
+  gap: 10px 10px;
+}
+
+.tools__icon {
+  width: 80px;
+  height: 80px;
 }
 
 /* FOOTER */
