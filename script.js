@@ -111,8 +111,7 @@ overlayVideo.addEventListener('click', closeModalVideo);
 
 document.addEventListener('keydown', function (e) {
   if (
-    e.key === 'Escape' &&
-    !modal.classList.contains('hidden') &&
+    (e.key === 'Escape' && !modal.classList.contains('hidden')) ||
     !modalVideo.classList.contains('hidden')
   ) {
     closeModal();
