@@ -78,6 +78,8 @@ observerSecTwoBottom.observe(document.querySelector('#bottom--track'));
 ///////////////////////////////////////
 // Modal window
 
+// TODO see if there is more DRY way to implement modals?
+
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');

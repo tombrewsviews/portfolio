@@ -196,14 +196,14 @@ img {
   padding: 0.8rem 2.5rem;
   border-radius: 3rem;
   background-color: var(--color-tertiary);
-  color: #222;
+  color: #fff;
 }
 
 .nav__link--btn:hover,
 .nav__link--btn:active {
   color: inherit;
   background-color: var(--color-tertiary-darker);
-  color: #333;
+  color: #fff;
 }
 
 /* HEADER */
