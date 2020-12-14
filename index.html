@@ -628,13 +628,32 @@
       </h5>
     </footer>
     
-
+<!-- TODO refactor inline styles into style.css -->
     <div class="modal hidden">
       <button class="btn--close-modal">&times;</button>
       <h2 class="modal__header">
-        Get stuff
+        📥 Take what you need! 
       </h2>
-      <button class="btn">Next step &rarr;</button>
+      <div style="display: flex; flex: 1; flex-direction: row;padding-top: 8px;">
+        <div style="flex:1;flex-direction: column;margin-right: 80px;">
+          <img src="img/cv-small.png" alt="cv" style="width: 300px; height: auto;filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.1));"/>
+          <h4 class="products__title" style="margin-top: 24px;">Curriculum Vitae</h4>
+          <h5 style="margin-top: 0px;line-height: 1.4;">
+            A PDF with top level details on my career path and the most important links. Feel free to pass it on and say hi when some day!
+          </h5>
+          <a class="nav__link nav__link--btn download--btn" style="margin-top: 24px" href="img/TomParandyk_CV_2021.pdf" download target="_blank">Download My CV</a>
+        </div>
+        <div style="flex:1;flex-direction: column;">
+          <img src="img/collab-small.png" alt="Views Tools" style="width: 300px; height: auto;filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.3));"/>
+          <h4 class="products__title" style="margin-top: 24px;">Views Tools</h4>
+          <h5 style="margin-top: 0px;line-height: 1.4;">
+            Speed-up your design and development process, create new React Web and Native with one click, connect data with
+            GraphQL and REST APIs, extend React logic with any custom features and components.
+          </h5>
+          <a class="nav__link nav__link--btn" style="width: 160px; margin-top: 24px;" href="https://tom734512.typeform.com/to/yyz1Ja" target="_blank">Request Tools</a>
+        </div>
+        
+      </div>
     </div>
     <div class="overlay hidden"></div>
     <div class="modal__video hidden">

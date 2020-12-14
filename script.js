@@ -30,7 +30,7 @@ const removeLoader = (window.onload = event => {
 });
 
 ///////////////// Nav
-
+/////TODO refactor onscroll to use the observer API
 let scrolling = false;
 
 window.onscroll = () => {
