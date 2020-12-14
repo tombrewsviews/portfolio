@@ -163,7 +163,7 @@ img {
 
 .nav__avatar {
   border-radius: 50%;
-  height: 4.5rem;
+  height: 5rem;
   transition: all 0.3s;
 }
 
@@ -787,6 +787,11 @@ img {
   font-weight: 700;
   margin-top: 32px;
   align-self: flex-start;
+}
+
+.products__icon {
+  width: 80px;
+  height: 80px;
 }
 
 /* TOOLS */
