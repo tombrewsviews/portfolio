@@ -898,7 +898,7 @@ img {
   padding: 5rem 6rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
   z-index: 1000;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
 .modal__video {
@@ -913,7 +913,13 @@ img {
   padding: 2rem 2rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
   z-index: 1000;
-  transition: all 0.5s;
+  transition: all 0.3s;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  top: 60%;
 }
 
 .overlay {
@@ -994,11 +1000,6 @@ img {
   cursor: pointer;
   border: none;
   background: none;
-}
-
-.hidden {
-  visibility: hidden;
-  opacity: 0;
 }
 
 /* Section photo */
