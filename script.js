@@ -51,10 +51,15 @@ setInterval(() => {
 
 let observerSecTwoTop = new IntersectionObserver(entries => {
   if (entries[0].boundingClientRect.bottom < 0) {
+    console.log(entries[0].boundingClientRect.bottom, 'elese bottom smaller');
     nav.classList.remove('solid__background__light');
     nav.classList.add('solid__background__dark');
     navMenuItem.forEach(e => e.classList.add('nav__links__dark'));
-  } else if (entries[0].boundingClientRect.bottom > 0) {
+  } else if (
+    entries[0].boundingClientRect.bottom > 0 &&
+    entries[0].isIntersecting
+  ) {
+    console.log(entries[0].boundingClientRect.bottom, 'elese top greater');
     nav.classList.add('solid__background__light');
     nav.classList.remove('solid__background__dark');
     navMenuItem.forEach(e => e.classList.remove('nav__links__dark'));
@@ -63,10 +68,15 @@ let observerSecTwoTop = new IntersectionObserver(entries => {
 
 let observerSecTwoBottom = new IntersectionObserver(entries => {
   if (entries[0].boundingClientRect.bottom < 0) {
+    console.log(entries[0].boundingClientRect.bottom, 'elese bottom smaller');
     nav.classList.add('solid__background__light');
     nav.classList.remove('solid__background__dark');
     navMenuItem.forEach(e => e.classList.remove('nav__links__dark'));
-  } else if (entries[0].boundingClientRect.bottom > 0) {
+  } else if (
+    entries[0].boundingClientRect.bottom > 0 &&
+    entries[0].isIntersecting
+  ) {
+    console.log(entries[0].boundingClientRect.bottom, 'elese bottom greater');
     nav.classList.remove('solid__background__light');
     nav.classList.add('solid__background__dark');
     navMenuItem.forEach(e => e.classList.add('nav__links__dark'));
