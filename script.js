@@ -220,34 +220,30 @@ tabsContainer.addEventListener('mouseover', function (e) {
 });
 
 ///////// LOCATION
-const getPosition = function () {
-  return new Promise(function (resolve, reject) {
-    navigator.geolocation.getCurrentPosition(resolve, reject);
-  });
-};
+// const getPosition = function () {
+//   return new Promise(function (resolve, reject) {
+//     navigator.geolocation.getCurrentPosition(resolve, reject);
+//   });
+// };
 
 const locate = async function () {
   try {
-    const position = await getPosition();
-    const { latitude: lat, longitude: lng } = position.coords;
-    // console.log(position);
-    const geocode = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
-    if (!geocode.ok) throw new Error('No location data');
-    const dataGeo = await geocode.json();
+    const geodata = await fetch(
+      `http://ip-api.com/json/?fields=country,lat,lon`
+    );
+    if (!geodata.ok) throw new Error('No location data');
 
-    const country = dataGeo.country;
-    // console.log(country);
-    return { lat, lng, country };
+    return await geodata.json();
   } catch (err) {
     console.error(`Locate: ${err}`);
   }
 };
 (async function () {
   //visitor's data
-  let result = await locate();
-  let vLat = result.lat;
-  let vLng = result.lng;
-  let vCountry = result.country;
+  let visitor = await locate();
+  let vLat = visitor.lat;
+  let vLng = visitor.lon;
+  let vCountry = visitor.country;
   // my data
   const myLat = 39.5696;
   const myLng = 2.6502;
