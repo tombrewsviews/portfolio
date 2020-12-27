@@ -13,7 +13,7 @@ const btnCloseModalVideo = document.querySelector('.btn--close-modal-video');
 const btnOpenModal = document.querySelector('.btn--show-modal');
 const btnOpenModalVideo = document.querySelector('.btn--show-modal-video');
 const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
+const section7 = document.querySelector('#section--7');
 const nav = document.querySelector('.nav');
 const navMenuItem = document.querySelectorAll('.menu__item');
 const tabs = document.querySelectorAll('.skills__tab');
@@ -181,8 +181,8 @@ imgTargets.forEach(img => imgObserver.observe(img));
 ///////////////////////////////////////
 // Button scrolling
 btnScrollTo.addEventListener('click', function (e) {
-  const s1coords = section1.getBoundingClientRect();
-  section1.scrollIntoView({ behavior: 'smooth' });
+  const s7coords = section7.getBoundingClientRect();
+  section7.scrollIntoView({ behavior: 'smooth' });
 });
 
 ///////////////////////////////////////
@@ -218,3 +218,97 @@ tabsContainer.addEventListener('mouseover', function (e) {
     .querySelector(`.skills__content--${hovered.dataset.tab}`)
     .classList.add('skills__content--active');
 });
+
+///////// LOCATION
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+const locate = async function () {
+  try {
+    const position = await getPosition();
+    const { latitude: lat, longitude: lng } = position.coords;
+    // console.log(position);
+    const geocode = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+    if (!geocode.ok) throw new Error('No location data');
+    const dataGeo = await geocode.json();
+
+    const country = dataGeo.country;
+    // console.log(country);
+    return { lat, lng, country };
+  } catch (err) {
+    console.error(`Locate: ${err}`);
+  }
+};
+(async function () {
+  //visitor's data
+  let result = await locate();
+  let vLat = result.lat;
+  let vLng = result.lng;
+  let vCountry = result.country;
+  // my data
+  const myLat = 39.5696;
+  const myLng = 2.6502;
+  const myCountry = 'Spain';
+
+  let map = L.map('map', {
+    center: [vLat, vLng],
+    zoom: 2,
+    scrollWheelZoom: false,
+  });
+  let myFilter = [
+    'invert:100%',
+    'brightness:110%',
+    'grayscale:100%',
+    'hue:360deg',
+    // 'opacity:100%',
+    // 'contrast:130%',
+    // 'blur:0px',
+    // 'saturate:300%',
+    // 'sepia:10%',
+  ];
+  //https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png
+  //https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter
+  L.tileLayer
+    .colorFilter('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      // attribution:
+      //   '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      filter: myFilter,
+    })
+    .addTo(map);
+
+  L.marker([vLat, vLng])
+    .addTo(map)
+    .bindPopup(`You are in ${vCountry}`)
+    .openPopup();
+
+  L.marker([34.7465, -92.2896])
+    .addTo(map)
+    .bindPopup('AAAAAAAA.<br> Easily customizable.');
+
+  L.circle([34.7465, -92.2896], { radius: 1000000 }).addTo(map);
+})();
+// const visitor = locate().then(visitor => console.log(visitor));
+
+//TODO calculate distance
+//TODO draw route
+//TODO calculate timezone difference in hours
+
+///////////ENDORSEMENTS
+
+// const content = async function () {
+//   try {
+//     const jokes = await fetch(
+//       `http://api.icndb.com/jokes/random/5?limitTo=[nerdy]&firstName=Tom&lastName=Parandyk`
+//     );
+//     if (!jokes.ok) throw new Error('No jokes data');
+//     const text = await jokes.json();
+//     //TODO call the render function with text. forEach
+//   } catch (err) {
+//     console.error(`Jokes: ${err}`);
+//   }
+// };
+// content();
+// console.log(content);

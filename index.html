@@ -12,9 +12,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""/>
+    
     <title>Hi, I'm Tom</title>
 
-    <script defer src="script.js"></script>
     <script>
       // Global namespace (backwards-compatibility)
       var SPE = {};
@@ -34,6 +37,11 @@
     <script defer src="js/assets.js"></script>
     <script defer src="js/scene.js"></script>
     <script defer src="js/main.js"></script>
+    <script defer src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""></script>
+    <script defer src="js/leaflet-tilelayer-colorfilter.min.js"></script>
+    <script defer src="script.js"></script>
   </head>
   <body>
     <nav class="nav">
@@ -43,26 +51,22 @@
           <a class="nav__link menu__item" href="#section--1">Skills</a>
         </li>
         <li class="nav__item">
-          <a class="nav__link menu__item" href="#section--2">Collab</a>
+          <a class="nav__link menu__item" href="#section--5">Tools</a>
         </li>
         <li class="nav__item">
-          <a class="nav__link menu__item" href="#section--3">Tech</a>
+          <a class="nav__link menu__item" href="#section--7">Impact</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link menu__item" href="#section--2">Collab</a>
         </li>
         <li class="nav__item">
           <a class="nav__link menu__item" href="#section--4">Products</a>
         </li>
         <li class="nav__item">
-          <a class="nav__link menu__item" href="#section--5">Tools</a>
+          <a class="nav__link menu__item" href="#section--8">Remote</a>
         </li>
         <li class="nav__item">
           <a class="nav__link menu__item" href="#section--6">Writing</a>
-        </li>
-
-        <li class="nav__item">
-          <a class="nav__link menu__item" href="#section--7">The Path</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link menu__item" href="#section--8">Remote</a>
         </li>
         <li class="nav__item">
           <a class="nav__link nav__link--btn btn--show-modal" href="##">Goodies!</a>
@@ -77,9 +81,9 @@
           Product designer
           <span class="highlight">eager engineer</span>strategist
           <span class="highlight">wild innovator</span> proud dad
-          <span class="highlight">creative doer</span> aspiring musician.
+          <span class="highlight">creative leader</span> aspiring musician.
         </h4>
-        <button class="btn--text btn--scroll-to">Tell me more</button>
+        <button class="btn--text btn--scroll-to">My Impact</button>
       </div>
       <div class="canvas__wrapper">
         <div id="loader">
@@ -98,9 +102,51 @@
       </div>
     </header>
 
-    <section class="section" id="section--1">
+    <section class="section" >
       <div class="section__title">
-        <h2 class="section__description">Skills</h2>
+        <h2 class="section__description">My Path</h2>
+        <h3 class="section__header">I've started in print, went to advertising, fell in love with UX, and I'm transitioning to engineering for the last couple of years.</h3>
+        <div style="display: flex; flex-direction: row;align-items: center;margin-top: 48px;">
+          
+          <a class="nav__link nav__link--btn download--btn" href="img/TomParandyk_CV_2021.pdf" download>Download My CV</a>
+          <p style="margin-top: 1px;margin-left: 16px;font-size: 16px;color: rgba(0,0,0,0.3);">PDF file. Size: ~4MB</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background-color: #fff; border: 0; height: 880px;" id="section--5">
+      <div class="section__title">
+        <h2 class="section__description">My Tools</h2>
+        <h3 class="section__header">I've became proficient with many tools over the 16 years of my design career.</h3>
+        <!-- <h4 class="products__title">Wireframing and High Fidelity Design Tools</h4> -->
+        <div class="tools__grid">
+          <a href="https://www.adobe.com/es/products/illustrator.html" target="_blank"><img  class="tools__icon" src="img/logo-illustrator.jpg" alt="illustrator"/></a>
+          <a href="https://www.adobe.com/es/products/photoshop.html" target="_blank"><img  class="tools__icon" src="img/logo-photoshop.jpg" alt="photoshop"/></a>
+          <a href="https://www.sketch.com/" target="_blank"><img  class="tools__icon" src="img/logo-sketch.jpg" alt="sketch"/></a>
+          <a href="https://zeplin.io/" target="_blank"><img  class="tools__icon" src="img/logo-zeplin.jpg" alt="zeplin"/></a>
+          <a href="https://www.figma.com/" target="_blank"><img  class="tools__icon" src="img/logo-figma.jpg" alt="figma"/></a>
+          <a href="https://www.invisionapp.com/" target="_blank"><img  class="tools__icon" src="img/logo-invision.jpg" alt="invision"/></a>
+          <a href="https://www.adobe.com/es/products/aftereffects.html" target="_blank"><img  class="tools__icon" src="img/logo-ae.jpg" alt="after effects"/></a>
+          <a href="https://www.apple.com/final-cut-pro/" target="_blank"><img  class="tools__icon" src="img/logo-fc.jpg" alt="final cut"/></a>
+          <a href="https://spline.design/" target="_blank"><img  class="tools__icon" src="img/logo-spline.jpg" alt="spline"/></a>
+          <a href="https://views.tools/" target="_blank"><img  class="tools__icon" src="img/logo-views.jpg" alt="views"/></a>
+          <a href="https://nhost.io/" target="_blank"><img  class="tools__icon" src="img/logo-nhost.jpg" alt="nhost"/></a>
+          <a href="https://vercel.com/" target="_blank"><img  class="tools__icon" src="img/logo-vercel.jpg" alt="vercel"/></a>
+          
+          <a href="https://code.visualstudio.com/" target="_blank"><img  class="tools__icon" src="img/logo-vs.jpg" alt="vs code"/></a>
+          <a href="https://hasura.io/" target="_blank"><img  class="tools__icon" src="img/logo-hasura.jpg" alt="hasura"/></a>
+          <a href="https://iterm2.com/" target="_blank"><img  class="tools__icon" src="img/logo-iterm.jpg" alt="iterm"/></a>
+          <a href="https://github.com/" target="_blank"><img  class="tools__icon" src="img/logo-github.jpg" alt="github"/></a>
+          <a href="https://unity.com/" target="_blank"><img  class="tools__icon" src="img/logo-unity.jpg" alt="unity"/></a>
+          <a href="hhttps://amplitude.com/" target="_blank"><img  class="tools__icon" src="img/logo-ampli.jpg" alt="amplitude"/></a>
+          <a href="https://marketingplatform.google.com/about/analytics/" target="_blank"><img  class="tools__icon" src="img/logo-analytics.jpg" alt="google analytics"/></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="border: 0;" id="section--1">
+      <div class="section__title">
+        <h2 class="section__description">My Skills</h2>
         <h3 class="section__header">
           I'm a full-stack product designer with an obsessive engineering
           disorder.
@@ -187,8 +233,10 @@
       </div>
     </section>
 
-    <section class="section dark" id="section--2">
-      <div class="section__title title__reset">
+    
+
+    <section class="section dark" style="border: 0;padding: 20rem 0 0 0" id="section--7">
+      <div class="section__title">
         <div
           id="top--track"
           style="
@@ -196,7 +244,19 @@
             height: 10px;
             position: relative;
             top: -280px;"></div>
-        <h2 class="section__description">Collaboration</h2>
+        <h2 class="section__description">My Impact</h2>
+        <h3 class="section__header collab__text">I'm a goal driven creative go-getter, but there is always a team behind each of my achievements.</h3>
+        <!-- <h5 class="collab__subtitle collab__text">
+          This experience is 
+        </h5> -->
+        
+      </div>
+      <div id="map" style="z-index: 0; width:100% ;height: 700px; margin-top: 48px;"></div>
+    </section>
+
+    <section class="section__static dark" id="section--2">
+      <div class="section__title title__reset">
+        <h2 class="section__description">The Collaboration</h2>
         <h3 class="section__header collab__text">
           I've co-created a designer-friendly abstraction on top of React to
           enable full collaboration between designers, engineers, and product owners.
@@ -340,9 +400,9 @@
       </div>
     </section>
 
-    <section class="section__static dark" id="section--3">
+    <section class="section__static dark" style="padding: 0rem 3rem;" id="section--3">
       <div class="section__title">
-        <h2 class="section__description">Tech</h2>
+        <h2 class="section__description">My Tech Skills</h2>
         <h3 class="section__header collab__text">I enjoy breaking things and putting them back together. 
           I spend at least two hours a day learning.
         </h3>
@@ -379,7 +439,7 @@
 
     <section class="section" id="section--4">
       <div class="section__title">
-        <h2 class="section__description">Products</h2>
+        <h2 class="section__description">The Products</h2>
         <h3 class="section__header">The latest products I've helped deliver are in the dental and orthodontic practice management space.</h3>
         <div style="display: flex;flex-direction: row;margin-top: 48px;align-items: center;">
           <img  class="products__icon" src="img/icon-target.svg" alt="target group"/>
@@ -471,75 +531,9 @@
       </div>
     </section>
 
-    <section class="section" style="background-color: #fff; border: 0; height: 880px;" id="section--5">
-      <div class="section__title">
-        <h2 class="section__description">Tools</h2>
-        <h3 class="section__header">I've became proficient with many tools over the 16 years of my design career.</h3>
-        <!-- <h4 class="products__title">Wireframing and High Fidelity Design Tools</h4> -->
-        <div class="tools__grid">
-          <a href="https://www.adobe.com/es/products/illustrator.html" target="_blank"><img  class="tools__icon" src="img/logo-illustrator.jpg" alt="illustrator"/></a>
-          <a href="https://www.adobe.com/es/products/photoshop.html" target="_blank"><img  class="tools__icon" src="img/logo-photoshop.jpg" alt="photoshop"/></a>
-          <a href="https://www.sketch.com/" target="_blank"><img  class="tools__icon" src="img/logo-sketch.jpg" alt="sketch"/></a>
-          <a href="https://zeplin.io/" target="_blank"><img  class="tools__icon" src="img/logo-zeplin.jpg" alt="zeplin"/></a>
-          <a href="https://www.figma.com/" target="_blank"><img  class="tools__icon" src="img/logo-figma.jpg" alt="figma"/></a>
-          <a href="https://www.invisionapp.com/" target="_blank"><img  class="tools__icon" src="img/logo-invision.jpg" alt="invision"/></a>
-          <a href="https://www.adobe.com/es/products/aftereffects.html" target="_blank"><img  class="tools__icon" src="img/logo-ae.jpg" alt="after effects"/></a>
-          <a href="https://www.apple.com/final-cut-pro/" target="_blank"><img  class="tools__icon" src="img/logo-fc.jpg" alt="final cut"/></a>
-          <a href="https://spline.design/" target="_blank"><img  class="tools__icon" src="img/logo-spline.jpg" alt="spline"/></a>
-          <a href="https://views.tools/" target="_blank"><img  class="tools__icon" src="img/logo-views.jpg" alt="views"/></a>
-          <a href="https://nhost.io/" target="_blank"><img  class="tools__icon" src="img/logo-nhost.jpg" alt="nhost"/></a>
-          <a href="https://vercel.com/" target="_blank"><img  class="tools__icon" src="img/logo-vercel.jpg" alt="vercel"/></a>
-          
-          <a href="https://code.visualstudio.com/" target="_blank"><img  class="tools__icon" src="img/logo-vs.jpg" alt="vs code"/></a>
-          <a href="https://hasura.io/" target="_blank"><img  class="tools__icon" src="img/logo-hasura.jpg" alt="hasura"/></a>
-          <a href="https://iterm2.com/" target="_blank"><img  class="tools__icon" src="img/logo-iterm.jpg" alt="iterm"/></a>
-          <a href="https://github.com/" target="_blank"><img  class="tools__icon" src="img/logo-github.jpg" alt="github"/></a>
-          <a href="https://unity.com/" target="_blank"><img  class="tools__icon" src="img/logo-unity.jpg" alt="unity"/></a>
-          <a href="hhttps://amplitude.com/" target="_blank"><img  class="tools__icon" src="img/logo-ampli.jpg" alt="amplitude"/></a>
-          <a href="https://marketingplatform.google.com/about/analytics/" target="_blank"><img  class="tools__icon" src="img/logo-analytics.jpg" alt="google analytics"/></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="border: 0;" id="section--6">
-      <div class="section__title section__title--testimonials">
-        <h2 class="section__description">Writing</h2>
-        <h3 class="section__header">
-          I share what I've learned, and learn from what others share.
-        </h3>
-      </div>
-      <div id="medium-widget"></div>
-      <script src="https://medium-widget.pixelpoint.io/widget.js"></script>
-      <script>
-        MediumWidget.Init({
-          renderTo: '#medium-widget',
-          params: {
-            resource: 'https://medium.com/@tomparandyk',
-            postsPerLine: 2,
-            limit: 10,
-            picture: 'big',
-            fields: ['description', 'author', 'publishAt'],
-            ratio: 'landscape',
-          },
-        });
-      </script>
-    </section>
-
-    <section class="section" id="section--7">
-      <div class="section__title">
-        <h2 class="section__description">The Path</h2>
-        <h3 class="section__header">I've started in print, went to advertising, fell in love with UX, and I'm transitioning to engineering for the last couple of years.</h3>
-        <div style="display: flex; flex-direction: row;align-items: center;margin-top: 48px;">
-          
-          <a class="nav__link nav__link--btn download--btn" href="img/TomParandyk_CV_2021.pdf" download>Download My CV</a>
-          <p style="margin-top: 1px;margin-left: 16px;font-size: 16px;color: rgba(0,0,0,0.3);">PDF file. Size: ~4MB</p>
-        </div>
-      </div>
-    </section>
-
     <section class="section" style="background-color: #fff; border: 0;" id="section--8">
       <div class="section__title" style="margin: 0 auto 2rem auto;">
-        <h2 class="section__description">Remote Culture</h2>
+        <h2 class="section__description">My Remote Culture</h2>
         <h3 class="section__header" >I communicate a lot with my team. I make myself available for calls and discussions. I like to listen to people's opinions and I'm not afraid to speak up.</h3>
       </div>
       <div style="width: 1080px;height:720px;margin: 0 auto; pointer-events: none;">
@@ -563,6 +557,30 @@
           
         </div>
     </div>
+    </section>
+
+    <section class="section" style="border: 0;" id="section--6">
+      <div class="section__title section__title--testimonials">
+        <h2 class="section__description">My Writing</h2>
+        <h3 class="section__header">
+          I share what I've learned, and learn from what others share.
+        </h3>
+      </div>
+      <div id="medium-widget"></div>
+      <script src="https://medium-widget.pixelpoint.io/widget.js"></script>
+      <script>
+        MediumWidget.Init({
+          renderTo: '#medium-widget',
+          params: {
+            resource: 'https://medium.com/@tomparandyk',
+            postsPerLine: 2,
+            limit: 10,
+            picture: 'big',
+            fields: ['description', 'author', 'publishAt'],
+            ratio: 'landscape',
+          },
+        });
+      </script>
     </section>
 
     <section class="section" style="padding: 0rem; border-top: 0px solid #ddd;line-height: 0;">
