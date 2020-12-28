@@ -19,6 +19,7 @@ const navMenuItem = document.querySelectorAll('.menu__item');
 const tabs = document.querySelectorAll('.skills__tab');
 const tabsContainer = document.querySelector('.skills__tab-container');
 const tabsContent = document.querySelectorAll('.skills__content');
+const btnJoke = document.querySelector('.joke');
 
 ///////////////// Canvas loading
 function removeElement(elementId) {
@@ -232,7 +233,6 @@ const locate = async function () {
       `http://ip-api.com/json/?fields=country,lat,lon`
     );
     if (!geodata.ok) throw new Error('No location data');
-
     return await geodata.json();
   } catch (err) {
     console.error(`Locate: ${err}`);
@@ -254,9 +254,31 @@ const locate = async function () {
     zoom: 2,
     scrollWheelZoom: false,
   });
+  const marker = L.icon({
+    iconUrl: 'img/marker.png',
+    shadowUrl: 'img/marker-shadow.png',
+
+    shadowSize: [50, 64], // size of the shadow
+    shadowAnchor: [4, 62], // the same for the shadow
+    iconSize: [32, 45], // size of the icon
+    iconAnchor: [16, 43], // point of the icon which will correspond to marker's location
+    popupAnchor: [0, -35], // point from which the popup should open relative to the iconAnchor
+  });
+
+  const vMarker = L.icon({
+    iconUrl: 'img/vMarker.png',
+    shadowUrl: 'img/marker-shadow.png',
+
+    shadowSize: [50, 64], // size of the shadow
+    shadowAnchor: [4, 62], // the same for the shadow
+    iconSize: [32, 45], // size of the icon
+    iconAnchor: [15, 45], // point of the icon which will correspond to marker's location
+    popupAnchor: [0, -35], // point from which the popup should open relative to the iconAnchor
+  });
+
   let myFilter = [
     'invert:100%',
-    'brightness:110%',
+    'brightness:45%',
     'grayscale:100%',
     'hue:360deg',
     // 'opacity:100%',
@@ -265,6 +287,7 @@ const locate = async function () {
     // 'saturate:300%',
     // 'sepia:10%',
   ];
+
   //https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png
   //https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter
   L.tileLayer
@@ -275,36 +298,187 @@ const locate = async function () {
     })
     .addTo(map);
 
-  L.marker([vLat, vLng])
+  const popupOptions = {
+    maxWidth: '200',
+    className: 'popupCustom',
+  };
+
+  const vPopupOptions = {
+    maxWidth: '200',
+    className: 'vPopupCustom',
+  };
+
+  L.marker([vLat, vLng], { icon: vMarker })
     .addTo(map)
-    .bindPopup(`You are in ${vCountry}`)
+    .bindPopup(
+      `How are things in ${vCountry}? This map visually shows the impact of my work as a product designer. It's implemented from scratch with the Leaflet library and the IP-API to get your location and country.`,
+      vPopupOptions
+    )
     .openPopup();
 
-  L.marker([34.7465, -92.2896])
+  L.marker([34.7465, -92.2896], { icon: marker })
     .addTo(map)
-    .bindPopup('AAAAAAAA.<br> Easily customizable.');
+    .bindPopup(
+      "I'm helping over 500 thousand patients access their medical data, and hundreds of doctors get their jobs done productively as a Product Designer at Greyfinch.",
+      popupOptions
+    );
 
-  L.circle([34.7465, -92.2896], { radius: 1000000 }).addTo(map);
+  L.circle([34.7465, -92.2896], {
+    radius: 1000000,
+    fillColor: 'rgba(255, 141, 0, 0.5)',
+    color: 'rgba(255, 141, 0, 0.5)',
+    weight: 1,
+  }).addTo(map);
+
+  L.marker([39.73915, -104.9847], { icon: marker })
+    .addTo(map)
+    .bindPopup(
+      "Technology layer I've helped design powers e-learning platform serving over 50 million primary and secondary school students across the US.",
+      popupOptions
+    );
+
+  L.circle([39.73915, -104.9847], {
+    radius: 1500000,
+    fillColor: 'rgba(255, 141, 0, 0.5)',
+    color: 'rgba(255, 141, 0, 0.5)',
+    weight: 1,
+  }).addTo(map);
+
+  L.marker([49.2827, -123.1207], { icon: marker })
+    .addTo(map)
+    .bindPopup(
+      "I'm helping a product team in Vancuver to speed up their financial system software delivery.",
+      popupOptions
+    );
+
+  L.circle([49.2827, -123.1207], {
+    radius: 50000,
+    fillColor: 'rgba(255, 141, 0, 0.5)',
+    color: 'rgba(255, 141, 0, 0.5)',
+    weight: 1,
+  }).addTo(map);
+
+  L.marker([53.2707, -9.0568], { icon: marker })
+    .addTo(map)
+    .bindPopup(
+      'My adventure in UX started by helping universities in Ireland to run scientific conferences for thousands of participans.',
+      popupOptions
+    );
+
+  L.circle([53.2707, -9.0568], {
+    radius: 140000,
+    fillColor: 'rgba(255, 141, 0, 0.5)',
+    color: 'rgba(255, 141, 0, 0.5)',
+    weight: 1,
+  }).addTo(map);
+
+  L.marker([42.3601, -71.0589], { icon: marker })
+    .addTo(map)
+    .bindPopup(
+      "I've helped over 50 thousand Fidelity employees world-wide to find a better career path.",
+      popupOptions
+    );
+
+  L.circle([42.3601, -71.0589], {
+    radius: 250000,
+    fillColor: 'rgba(255, 141, 0, 0.5)',
+    color: 'rgba(255, 141, 0, 0.5)',
+    weight: 1,
+  }).addTo(map);
+
+  L.marker([12.9716, 77.5946], { icon: marker })
+    .addTo(map)
+    .bindPopup(
+      "As part of an internal Fidelity HR platform, I've helped hundreds of employees in India on their path to professional success.",
+      popupOptions
+    );
+
+  L.circle([12.9716, 77.5946], {
+    radius: 250000,
+    fillColor: 'rgba(255, 141, 0, 0.5)',
+    color: 'rgba(255, 141, 0, 0.5)',
+    weight: 1,
+  }).addTo(map);
+
+  L.marker([-33.8688, 151.2093], { icon: marker })
+    .addTo(map)
+    .bindPopup(
+      "I've helped a small product team to re-design a remote productivity app, called Time Doctor. It got very successful during the pandemic.",
+      popupOptions
+    );
+
+  L.circle([-33.8688, 151.2093], {
+    radius: 150000,
+    fillColor: 'rgba(255, 141, 0, 0.5)',
+    color: 'rgba(255, 141, 0, 0.5)',
+    weight: 1,
+  }).addTo(map);
+
+  L.marker([19.076, 72.8777], { icon: marker })
+    .addTo(map)
+    .bindPopup(
+      "I'm helping dev shops in India to deliver high quality software at competitive price point.",
+      popupOptions
+    );
+
+  L.circle([19.076, 72.8777], {
+    radius: 50000,
+    fillColor: 'rgba(255, 141, 0, 0.5)',
+    color: 'rgba(255, 141, 0, 0.5)',
+    weight: 1,
+  }).addTo(map);
+
+  L.marker([54.4416, 18.5601], { icon: marker })
+    .addTo(map)
+    .bindPopup(
+      "I'm helping thousands of stock traders to make higher profits by accessing time-sensitive financial stock information on their mobile phones.",
+      popupOptions
+    );
+
+  L.circle([54.4416, 18.5601], {
+    radius: 200000,
+    fillColor: 'rgba(255, 141, 0, 0.5)',
+    color: 'rgba(255, 141, 0, 0.5)',
+    weight: 1,
+  }).addTo(map);
 })();
-// const visitor = locate().then(visitor => console.log(visitor));
 
-//TODO calculate distance
-//TODO draw route
-//TODO calculate timezone difference in hours
+/////////RANDOM JOKE
 
-///////////ENDORSEMENTS
+const getJoke = async function () {
+  try {
+    const jokes = await fetch(
+      `http://api.icndb.com/jokes/random?limitTo=[nerdy]&firstName=Tom&lastName=Parandyk`
+    );
+    if (!jokes.ok) throw new Error('No jokes data');
+    return await jokes.json();
+  } catch (err) {
+    console.error(`Jokes: ${err}`);
+  }
+};
+getJoke();
 
-// const content = async function () {
-//   try {
-//     const jokes = await fetch(
-//       `http://api.icndb.com/jokes/random/5?limitTo=[nerdy]&firstName=Tom&lastName=Parandyk`
-//     );
-//     if (!jokes.ok) throw new Error('No jokes data');
-//     const text = await jokes.json();
-//     //TODO call the render function with text. forEach
-//   } catch (err) {
-//     console.error(`Jokes: ${err}`);
-//   }
-// };
-// content();
-// console.log(content);
+var content;
+
+let makeQuote = async function () {
+  let response = await getJoke();
+  // console.log(response);
+  let text = response.value.joke;
+  // console.log(text);
+  // const quote = document.createElement('P');
+  content = document.createTextNode(`${text}`);
+  const addQuote = await document
+    .getElementById('quote-container')
+    .appendChild(content);
+};
+makeQuote();
+
+const removeQuote = function () {
+  content.parentNode.removeChild(content);
+};
+
+btnJoke.addEventListener('click', function () {
+  getJoke();
+  removeQuote();
+  makeQuote();
+});
