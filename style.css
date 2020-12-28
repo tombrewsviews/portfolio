@@ -792,6 +792,13 @@ TODO refactor with javascript*/
   margin-top: 32px;
 }
 
+.path__img {
+  width: 600px;
+  height: auto;
+  /* margin-left: -10px; */
+  margin-top: 32px;
+}
+
 .products__img {
   width: 1200px;
   height: auto;
