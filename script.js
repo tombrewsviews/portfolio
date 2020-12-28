@@ -372,6 +372,20 @@ const locate = async function () {
     weight: 1,
   }).addTo(map);
 
+  L.marker([53.3498, -6.2603], { icon: marker })
+    .addTo(map)
+    .bindPopup(
+      "I've helped re-design the financial CRM platform to strengthen Softco's competitive position in a crowded market. The sales of the new version went up by 400%.",
+      popupOptions
+    );
+
+  L.circle([53.3498, -6.2603], {
+    radius: 350000,
+    fillColor: 'rgba(255, 141, 0, 0.5)',
+    color: 'rgba(255, 141, 0, 0.5)',
+    weight: 1,
+  }).addTo(map);
+
   L.marker([42.3601, -71.0589], { icon: marker })
     .addTo(map)
     .bindPopup(
