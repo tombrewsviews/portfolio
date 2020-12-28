@@ -448,7 +448,7 @@ const locate = async function () {
 const getJoke = async function () {
   try {
     const jokes = await fetch(
-      `http://api.icndb.com/jokes/random?escape=javascript&limitTo=[nerdy]&firstName=Tom&lastName=Parandyk`
+      `https://api.icndb.com/jokes/random?escape=javascript&limitTo=[nerdy]&firstName=Tom&lastName=Parandyk`
     );
     if (!jokes.ok) throw new Error('No jokes data');
     return await jokes.json();
