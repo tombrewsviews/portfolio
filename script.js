@@ -230,7 +230,7 @@ tabsContainer.addEventListener('mouseover', function (e) {
 const locate = async function () {
   try {
     const geodata = await fetch(
-      `http://ip-api.com/json/?fields=country,lat,lon`
+      `https://api.ipgeolocation.io/ipgeo?apiKey=fccb516d6a3e43d4a171624021868202`
     );
     if (!geodata.ok) throw new Error('No location data');
     return await geodata.json();
@@ -241,9 +241,9 @@ const locate = async function () {
 (async function () {
   //visitor's data
   let visitor = await locate();
-  let vLat = visitor.lat;
-  let vLng = visitor.lon;
-  let vCountry = visitor.country;
+  let vLat = visitor.latitude;
+  let vLng = visitor.longitude;
+  let vCountry = visitor.country_name;
   // my data
   const myLat = 39.5696;
   const myLng = 2.6502;
