@@ -241,13 +241,22 @@ const locate = async function () {
 (async function () {
   //visitor's data
   let visitor = await locate();
+  if (!visitor) {
+    const mapContainer = document.getElementById('no-map');
+    const noMapError = document.createTextNode(
+      'Looks like your browser is blocking the API requests. Happens on Brave. Workaround is on its way.'
+    );
+    mapContainer.appendChild(noMapError);
+  }
+
   let vLat = visitor.latitude;
   let vLng = visitor.longitude;
   let vCountry = visitor.country_name;
+  console.log(visitor);
   // my data
-  const myLat = 39.5696;
-  const myLng = 2.6502;
-  const myCountry = 'Spain';
+  // const myLat = 39.5696;
+  // const myLng = 2.6502;
+  // const myCountry = 'Spain';
 
   let map = L.map('map', {
     center: [vLat, vLng],
@@ -471,6 +480,8 @@ const getJoke = async function () {
   }
 };
 getJoke();
+
+//////TODO refactor not to use global var
 
 var content;
 
