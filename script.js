@@ -238,31 +238,61 @@ const locate = async function () {
     console.error(`Locate: ${err}`);
   }
 };
+let map;
+
 (async function () {
   //visitor's data
   let visitor = await locate();
-  if (!visitor) {
-    const mapContainer = document.getElementById('no-map');
-    const noMapError = document.createTextNode(
-      'Looks like your browser is blocking the API requests. Happens on Brave. Workaround is on its way.'
-    );
-    mapContainer.appendChild(noMapError);
-  }
-
   let vLat = visitor.latitude;
   let vLng = visitor.longitude;
   let vCountry = visitor.country_name;
-  console.log(visitor);
-  // my data
-  // const myLat = 39.5696;
-  // const myLng = 2.6502;
-  // const myCountry = 'Spain';
+  if (visitor) {
+    map = L.map('map', {
+      center: [vLat, vLng],
+      zoom: 2,
+      scrollWheelZoom: false,
+    });
+    const vMarker = L.icon({
+      iconUrl: 'img/vMarker.png',
+      shadowUrl: 'img/marker-shadow.png',
 
-  let map = L.map('map', {
-    center: [vLat, vLng],
-    zoom: 2,
-    scrollWheelZoom: false,
-  });
+      shadowSize: [50, 64], // size of the shadow
+      shadowAnchor: [4, 62], // the same for the shadow
+      iconSize: [32, 45], // size of the icon
+      iconAnchor: [15, 45], // point of the icon which will correspond to marker's location
+      popupAnchor: [0, -35], // point from which the popup should open relative to the iconAnchor
+    });
+    const vPopupOptions = {
+      maxWidth: '200',
+      className: 'vPopupCustom',
+    };
+
+    L.marker([vLat, vLng], { icon: vMarker })
+      .addTo(map)
+      .bindPopup(
+        `How are things in ${vCountry}? This map visually shows the impact of my work as a product designer. It's implemented from scratch with the Leaflet library and the IP-API to get your location and country.`,
+        vPopupOptions
+      )
+      .openPopup();
+    // const mapContainer = document.getElementById('no-map');
+    // const noMapError = document.createTextNode(
+    //   'Looks like your browser is blocking the API requests. Happens on Brave. Workaround is on its way.'
+    // );
+    // mapContainer.appendChild(noMapError);
+  } else {
+    const myLat = 39.5696;
+    const myLng = 2.6502;
+
+    map = L.map('map', {
+      center: [myLat, myLng],
+      zoom: 2,
+      scrollWheelZoom: false,
+    });
+  }
+
+  // console.log(visitor);
+  // my data
+
   const marker = L.icon({
     iconUrl: 'img/marker.png',
     shadowUrl: 'img/marker-shadow.png',
@@ -271,17 +301,6 @@ const locate = async function () {
     shadowAnchor: [4, 62], // the same for the shadow
     iconSize: [32, 45], // size of the icon
     iconAnchor: [16, 43], // point of the icon which will correspond to marker's location
-    popupAnchor: [0, -35], // point from which the popup should open relative to the iconAnchor
-  });
-
-  const vMarker = L.icon({
-    iconUrl: 'img/vMarker.png',
-    shadowUrl: 'img/marker-shadow.png',
-
-    shadowSize: [50, 64], // size of the shadow
-    shadowAnchor: [4, 62], // the same for the shadow
-    iconSize: [32, 45], // size of the icon
-    iconAnchor: [15, 45], // point of the icon which will correspond to marker's location
     popupAnchor: [0, -35], // point from which the popup should open relative to the iconAnchor
   });
 
@@ -311,19 +330,6 @@ const locate = async function () {
     maxWidth: '200',
     className: 'popupCustom',
   };
-
-  const vPopupOptions = {
-    maxWidth: '200',
-    className: 'vPopupCustom',
-  };
-
-  L.marker([vLat, vLng], { icon: vMarker })
-    .addTo(map)
-    .bindPopup(
-      `How are things in ${vCountry}? This map visually shows the impact of my work as a product designer. It's implemented from scratch with the Leaflet library and the IP-API to get your location and country.`,
-      vPopupOptions
-    )
-    .openPopup();
 
   L.marker([34.7465, -92.2896], { icon: marker })
     .addTo(map)
