@@ -235,7 +235,7 @@ const locate = async function () {
     if (!geodata.ok) throw new Error('No location data');
     return await geodata.json();
   } catch (err) {
-    console.error(`Locate: ${err}`);
+    // console.error(`Locate: ${err}`);
   }
 };
 let map;
