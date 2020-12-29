@@ -243,10 +243,11 @@ let map;
 (async function () {
   //visitor's data
   let visitor = await locate();
-  let vLat = visitor.latitude;
-  let vLng = visitor.longitude;
-  let vCountry = visitor.country_name;
+
   if (visitor) {
+    let vLat = visitor.latitude;
+    let vLng = visitor.longitude;
+    let vCountry = visitor.country_name;
     map = L.map('map', {
       center: [vLat, vLng],
       zoom: 2,
