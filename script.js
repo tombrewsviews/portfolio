@@ -248,6 +248,7 @@ let map;
     let vLat = visitor.latitude;
     let vLng = visitor.longitude;
     let vCountry = visitor.country_name;
+    console.log(visitor);
     map = L.map('map', {
       center: [vLat, vLng],
       zoom: 2,
