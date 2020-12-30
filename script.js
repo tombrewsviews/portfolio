@@ -213,7 +213,7 @@ tabsContainer.addEventListener('mouseover', function (e) {
 
   // Activate tab
   hovered.classList.add('skills__tab--active');
-
+  hovered.style.transition = 'all 0.5s';
   // Activate content area
   document
     .querySelector(`.skills__content--${hovered.dataset.tab}`)
