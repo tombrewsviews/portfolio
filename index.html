@@ -42,6 +42,9 @@
       crossorigin=""></script>
     <script defer src="js/leaflet-tilelayer-colorfilter.min.js"></script>
     <script defer src="script.js"></script>
+    <script src="https://medium-widget.pixelpoint.io/widget.js"></script>
+    <!-- Medium posts widget 2 -->
+    <!-- <script src="https://www.retainable.io/assets/retainable/rss-embed/retainable-rss-embed.js"></script> -->
   </head>
   <body>
     <nav class="nav">
@@ -143,6 +146,12 @@
         </div>
       </div>
     </section>
+
+    <!-- <section class="section" style="border: 0px;background-color: #f5f7f6;">
+      <div style="display: flex; justify-content: center;">
+        <iframe width="1000" height="400" src="https://ember.ly/sapling/5b66b55680234876a72d370e471e808b/5ffb81ff7c4795b82579b8a5?access=public&embed=true" frameBorder="0"></iframe>
+      </div>
+    </section> -->
 
     <section class="section" style="border: 0;" id="section--1">
       <div class="section__title">
@@ -567,9 +576,24 @@
           I share what I've learned, and learn from what others share.
         </h3>
       </div>
-      <div id="medium-widget"></div>
-      <script src="https://medium-widget.pixelpoint.io/widget.js"></script>
-      <script>
+      <div id="medium-widget">
+        <div>
+          <img src="img/medium.jpg"/>
+        </div>
+        <div style="padding-left: 100px;"><a href="https://medium.com/@tomparandyk" target="_blank" class="btn--text">Check Out My Medium Profile</a></div>
+      </div>
+      <!-- Medium posts widget 2
+      <div id="retainable-rss-embed" 
+        data-rss="https://medium.com/feed/@tomparandyk"
+        data-maxcols="3" 
+        data-layout="grid" 
+        data-poststyle="inline" 
+        data-readmore="Read the rest" 
+        data-buttonclass="btn btn-primary" 
+        data-offset="-100">
+      </div> -->
+      
+      <!-- <script>
         MediumWidget.Init({
           renderTo: '#medium-widget',
           params: {
@@ -581,7 +605,7 @@
             ratio: 'landscape',
           },
         });
-      </script>
+      </script> -->
     </section>
 
     <section class="section" style="padding: 0rem; border-top: 0px solid #ddd;line-height: 0;">
